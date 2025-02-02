@@ -45,6 +45,10 @@ NavBar.Sidebar = [
             path: "adminOpDoc.dashboard_data_stats"
          },
          {
+            name: "Country Lists",
+            path: "adminOpDoc.get_country_list"
+         },
+         {
             name: "Get Activity Log",
             path: "adminOpDoc.get_activity_log"
          },
@@ -52,7 +56,7 @@ NavBar.Sidebar = [
    },
    {
       type: "link",
-      name: "Operations",
+      name: "Vendors",
       path: "adminVendorDoc",
       list: [
          {

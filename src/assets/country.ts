@@ -1,4 +1,4 @@
-let countryList = [
+export const countryList = [
    {
       "name": "Afghanistan",
       "iso3": "AFG",

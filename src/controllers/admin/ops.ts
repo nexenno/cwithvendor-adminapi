@@ -1,3 +1,4 @@
+import { countryList } from "../../assets/country";
 import helpers from "../../assets/helpers";
 import { mongoose } from "../../models/-dbConnector";
 import { AdminLogModel } from "../../models/admin-logs";
@@ -188,6 +189,13 @@ export default class AdminOps {
       }
 
       return helpers.outputSuccess(this.res, getLogs)
+   }
+
+   async countryList() {
+      //if the method is not post
+      if (this.method !== "get") return helpers.outputError(this.res, 405)
+
+      return helpers.outputSuccess(this.res, countryList)
    }
 
 

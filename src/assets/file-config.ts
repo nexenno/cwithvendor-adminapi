@@ -79,22 +79,22 @@ fileConfig.config.payStackSecret = fileConfig.config.env === "live" ? {
    key: 'pk_test_f81201a57c7f07abc0b0c79bdf770c2a137ff115',
 }
 
-// //load live credentials up
-// if (fileConfig.config.env !== "local") {
-//    try {
-//       let smKeys: any = fs.readFileSync(`/home/.credFolder/cwithvendor.json`, "utf-8");
-//       smKeys = smKeys ? JSON.parse(smKeys) : {};
-//       //add the live keys
-//       if (fileConfig.config.env === "live") {
-//          fileConfig.cred.live = smKeys && smKeys.cred && smKeys.cred.live ? smKeys.cred.live : {};
-//       }
-//       // console.log("First log,", smKeys)
-//       fileConfig.config = { ...fileConfig.config, ...smKeys.config }
-//       // console.log("Second Logo,", fileConfig.config)
-//    } catch (e) {
-//       console.log("error getting keys", e);
-//    }
-// }
+//load live credentials up
+if (fileConfig.config.env !== "local") {
+   try {
+      let smKeys: any = fs.readFileSync(`/home/.credFolder/cwithvendor.json`, "utf-8");
+      smKeys = smKeys ? JSON.parse(smKeys) : {};
+      //add the live keys
+      if (fileConfig.config.env === "live") {
+         fileConfig.cred.live = smKeys && smKeys.cred && smKeys.cred.live ? smKeys.cred.live : {};
+      }
+      // console.log("First log,", smKeys)
+      fileConfig.config = { ...fileConfig.config, ...smKeys.config }
+      // console.log("Second Logo,", fileConfig.config)
+   } catch (e) {
+      console.log("error getting keys", e);
+   }
+}
 
 
 // Initializing AWS space bucket

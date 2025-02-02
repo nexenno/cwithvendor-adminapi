@@ -233,4 +233,23 @@ adminOpDoc.get_activity_log = {
    }`
 }
 
+adminOpDoc.get_country_list = {
+   title: "Get Country List",
+   header: "Header=>Authorization: {{token}}",
+   comment: "",
+   method: "GET",
+   url: "http(s)://base-url/admin/ops/country-list",
+   doc_header: {
+      field: "Query Params",
+      type: "Type",
+      status: "Status",
+      description: "Description"
+   },
+   docs: [],
+   response: `   {
+      status: "ok",
+      data: {}
+   }`
+}
+
 export default adminOpDoc 
