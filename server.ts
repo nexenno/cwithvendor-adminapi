@@ -65,7 +65,7 @@ httpServer.listen(fileConfig.port, (error?: any) => {
    if (error) {
       console.log(error)
    } else {
-      console.log("User Service is running on port " + fileConfig.port)
+      console.log("Admin Service is running on port " + fileConfig.port)
    }
 })
 
