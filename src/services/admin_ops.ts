@@ -173,7 +173,7 @@ export default class AdminOpService extends PrivateMethodFunction {
 
       if (q) {
          //if the value is invalid
-         if (!/^[\w\-\_\@\s]+$/i.test(q)) {
+         if (!/^[\w\-\_\@\s\.]+$/i.test(q)) {
             return helpers.outputError(res, null, "Only alphanumeric characters are allowed")
          }
          queryBuilder.or = [{ name: { $regex: q, $options: "i" } }, { email: { $regex: q, $options: "i" } }]
