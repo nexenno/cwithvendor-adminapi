@@ -200,6 +200,7 @@ export default class AdminOpService extends PrivateMethodFunction {
             case "myprofile":
                pipLine = [
                   { $match: { _id: new mongoose.Types.ObjectId(userData.user_id) } },
+                  { $addFields: { user_id: "$_id" } },
                   { $unset: ["__v", "_id"] },
                   { $project: { password: 0, firebase_token: 0 } }
                ]
