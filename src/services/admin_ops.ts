@@ -74,6 +74,14 @@ export default class AdminOpService extends PrivateMethodFunction {
          qBuilder.status = parseInt(status)
       }
 
+      if (gender) {
+         //if the value not a valid one
+         if (!["male", "female"].includes(gender)) {
+            return helpers.outputError(res, null, "Gender is invalid. Expecting male or female")
+         }
+         qBuilder.gender = gender
+      }
+
       //if there's permission submitted
       if (perm && perm.length) {
          //if the values are invalid
@@ -149,9 +157,9 @@ export default class AdminOpService extends PrivateMethodFunction {
          }).catch(e => {
             console.log("Error sending admin login", e)
          })
-
-         return helpers.outputSuccess(res, fileConfig.config.env === "live" ? {} : id ? {} : { default_login_pass: passGen })
       }
+
+      return helpers.outputSuccess(res, fileConfig.config.env === "live" ? {} : id ? {} : { default_login_pass: passGen })
    }
 
    //get the admin users
