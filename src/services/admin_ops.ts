@@ -150,7 +150,7 @@ export default class AdminOpService extends PrivateMethodFunction {
             console.log("Error sending admin login", e)
          })
 
-         return helpers.outputSuccess(res, fileConfig.config.env === "live" ? {} : id ? {} : { code: passGen })
+         return helpers.outputSuccess(res, fileConfig.config.env === "live" ? {} : id ? {} : { default_login_pass: passGen })
       }
    }
 
