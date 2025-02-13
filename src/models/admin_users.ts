@@ -27,7 +27,7 @@ const adminUsers = new Schema({
    user_type: {
       type: String,
       enum: ["superadmin", "admin"],
-      required: true
+      default: "admin"
    },
    password: {
       type: String,
